@@ -1,0 +1,106 @@
+body {
+	background-color: darkcyan;
+	color: #eee;
+}
+
+.bg-primary {
+  color: #fff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(48%, Turquoise), color-stop(54%, MediumTurquoise) );
+  background-color: MediumTurquoise;
+  border-radius: 8px 8px 0 0;
+  text-shadow:-1px -1px 0px #999999;
+  -webkit-box-shadow:inset 1px 1px 1px 0px #eeeeee;
+ 	-moz-box-shadow:inset 1px 1px 1px 0px #eeeeee;
+ 	box-shadow:inset 1px 1px 1px 0px #eeeeee;
+}
+
+footer {
+	background-color: teal;
+}
+
+.btn-primary {
+	/*text-shadow: 0 1px 0 #fff;*/
+	border-color: cadetblue;
+	background-color: teal;
+}
+
+.btn-primary:hover {
+	/*text-shadow: 0 1px 0 #fff;*/
+	border-color: MediumTurquoise;
+	background-color: #027282;
+}
+
+.btn-primary:active {
+	border-color: teal;
+	background-color: #027282;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: teal;
+  border-color: cadetblue;
+}
+
+.form-control {
+	color: #eee;
+	background-color: lightseagreen;
+	border: 1px solid teal;
+	border-radius: 1px;
+}
+
+.form-control:focus {
+	border-color: #cccccc;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(64, 64, 64, .6);
+	        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(64, 64, 64, .6);
+}
+
+hr {
+	border-top: 1px solid #006969;
+}
+
+.slider-selection {
+	background: lightseagreen !important;
+}
+
+.slider-track {
+	background: teal  !important;
+}
+
+.slider-handle {
+	background-image: linear-gradient(top, lightseagreen 0%, teal 100%) !important;
+	background-image: -webkit-linear-gradient(top, lightseagreen 0%, teal 100%) !important;
+}
+
+.progress {
+	background-color: rgba(0,0,0,0);
+}
+
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  -webkit-transition: width 0;
+       -o-transition: width 0;
+          transition: width 0;
+}

@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="js/k.js"></script>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" >
+	<link href="theme.css" rel="stylesheet" type="text/css" >
 	<link href="css/bootstrap-slider.css" rel="stylesheet" type="text/css" >
 	<link href="t.css" rel="stylesheet" type="text/css">
 
@@ -31,44 +31,60 @@
 <form class="form-horizontal">
 <fieldset>
 
-	<h1>锟斤拷生成器</h1>
+	<h1 class="bg-primary" style="padding-top: 0.3em; padding-bottom: 0.2em;">锟斤拷生成器</h1>
 
 	<hr />
 
 	<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-			<div class="control-group">
-				<div class="controls">
-					<label class="control-label valtype" data-valtype="label">生成锟斤拷的最大长度</label>
-					<input type="text" class="form-control" id="len" value="16">
+		<div class="col-md-2">
+			<img src="img/Avatar_Doge_2.png" class="img-circle img-responsive">
+			<hr />
+			<p>雌豹傻逼啊</p>
+		</div>
+		<div class="col-md-1">
+			<input type="text" class="slider slider-vertical" id="rg-min" data-slider-id='sl-rg-min' data-slider-min="0" data-slider-max="65535" data-slider-step="1" data-slider-value="0" data-slider-orientation="vertical"></input>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="control-group">
+						<div class="controls">
+							<label class="control-label valtype" data-valtype="label">生成锟斤拷的最大长度</label>
+							<input type="text" class="form-control" id="len" value="32">
+							<input type="text" class="slider slider-horizontal" id="rg-len" data-slider-id='sl-rg-len' data-slider-min="0" data-slider-max="2048" data-slider-step="1" data-slider-value="32"></input>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="control-group col-md-12">
+
+					<div class="controls">
+						<div class="textarea">
+							<textarea type="" id="result" class="form-control" rows="8"></textarea>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="control-group col-md-6 col-md-offset-3">
-			<label class="control-label valtype" data-valtype="label">Textarea</label>
-			<div class="controls">
-				<div class="textarea">
-					<textarea type="" id="result" class="form-control" rows="6"></textarea>
-				</div>
-			</div>
+		<div class="col-md-1">
+			<input type="text" class="slider slider-vertical" id="rg-max" data-slider-id='sl-rg-max' data-slider-min="0" data-slider-max="65535" data-slider-step="1" data-slider-value="65535" data-slider-orientation="vertical"></input>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-md-3 col-md-offset-3">
-			<input type="text" class="slider slider-horizontal" id="rg-min" data-slider-id='sl-rg-min' data-slider-min="0" data-slider-max="65535" data-slider-step="1" data-slider-value="0"></input>
+		<!-- <a onclick="generate();" class="btn btn-primary" role="button">Generate</a> -->
+		<div class="btn-group">
+		  <a href="#" onclick="generate();" type="button" class="btn btn-primary">Generate</a>
+		  <a href="#" type="button" class="btn btn-primary" disabled="disabled">Copy</a>
 		</div>
-		<div class="col-md-3">
-			<input type="text" class="slider slider-horizontal" id="rg-max" data-slider-id='sl-rg-max' data-slider-min="0" data-slider-max="65535" data-slider-step="1" data-slider-value="65535"></input>
-		</div>
+		<!-- <a onclick="" class="btn btn-primary" role="button" disabled="disabled">Copy</a> -->
 	</div>
 
-	<div class="row">
-		<a onclick="generate();" class="btn btn-primary" role="button">Generate</a>
-	</div>
+
 	<!-- <input type="button" name="go" value="Generate" onclick="generate();"> -->
 
 </fieldset>
@@ -76,6 +92,22 @@
 
 </div>
 </div>
+
+<footer style="margin-top: 3em;">
+
+<div class="progress progress-striped active">
+  <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="prog">
+  </div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+		<h5 style="color: white;">by secondwtq</h5>
+	</div>
+
+</div>
+</footer>
 
 </body>
 
