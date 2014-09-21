@@ -5,13 +5,9 @@ body {
 
 .bg-primary {
   color: #fff;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(48%, Turquoise), color-stop(54%, MediumTurquoise) );
-  background-color: MediumTurquoise;
-  border-radius: 8px 8px 0 0;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(48%, lightseagreen), color-stop(52%, #1ea8a0) );
+  background-color: lightseagreen;
   text-shadow:-1px -1px 0px #999999;
-  -webkit-box-shadow:inset 1px 1px 1px 0px #eeeeee;
- 	-moz-box-shadow:inset 1px 1px 1px 0px #eeeeee;
- 	box-shadow:inset 1px 1px 1px 0px #eeeeee;
 }
 
 footer {
