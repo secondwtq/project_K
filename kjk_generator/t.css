@@ -1,3 +1,7 @@
 .container-content {
 	text-align: center;
-};
+}
+
+.form-element-group {
+	margin-bottom: 15px;
+}
