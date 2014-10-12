@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+	<title>aaa</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+
+	<script>
+
+		function clear_label() {
+			[ $('#label-conj'), $('#label-disj'), $('#label-cond'), $('#label-bioc') ].forEach(function (label, index, array){
+				$(label).removeClass('text_false');
+				$(label).removeClass('text_true');
+			});
+		}
+
+		function update_label(label, func) {
+			var result = func($('#button-p').hasClass('ctrue'), $('#button-q').hasClass('ctrue'));
+
+			if (result) $(label).addClass('text_true');
+			else $(label).addClass('text_false');
+		}
+
+		function conj(p, q) { return p && q; }
+		function disj(p, q) { return p || q; }
+		function cond(p, q) { return (!p) || q; }
+		function bioc(p, q) { return p == q; }
+
+		function toggle_button() {
+			$(this).toggleClass('cfalse');
+			$(this).toggleClass('ctrue');
+
+			clear_label();
+
+			update_label($('#label-conj'), conj);
+			update_label($('#label-disj'), disj);
+			update_label($('#label-cond'), cond);
+			update_label($('#label-bioc'), bioc);
+		}
+
+		$(document).ready(function () {
+			$("#button-p").click(toggle_button);
+			$("#button-q").click(toggle_button);
+		});
+
+	</script>
+
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			background: -webkit-linear-gradient(top, rgba(225, 225, 225, 1), rgba(172, 172, 172, 1)); 
+			background: linear-gradient(top, rgba(225, 225, 225, 1), rgba(172, 172, 172, 1)); 
+		}
+
+		.row {
+			display: table;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.dialog-background {
+			background: linear-gradient(top, rgba(247, 246, 246, 255), rgba(227, 227, 227, 255));
+			background: -webkit-linear-gradient(top, rgba(247, 246, 246, 255), rgba(227, 227, 227, 255));
+		}
+
+		.dialog-shadow-top-heavy {
+			box-shadow: 0 -8px 18px rgba(64, 64, 64, 255);
+		}
+
+		.dialog-shadow-top-light {
+			box-shadow: 0 -5px 18px rgba(128, 128, 128, 192);
+		}
+
+		.dialog-shadow-bottom-heavy {
+			box-shadow: 0 8px 18px rgba(64, 64, 64, 255);
+		}
+
+		.status-border-top {
+			border-top: 1px solid rgba(96, 96, 96, 255);
+		}
+
+		.dialog {
+			border-radius: 0 0 6px 6px;
+			border-top: 6px solid rgba(164, 164, 164, 255);
+		}
+
+		.col {
+			float: left;
+			height: 100%;
+			margin: 0.6em;
+		}
+
+		.form {
+			/*margin-bottom: 0.5em;*/
+		}
+
+		.form-element {
+			margin-bottom: 0.6em;
+		}
+
+		.switch-button {
+			display: inline-block;
+			height: 30px;
+			width: 72px;
+			background: black;
+			color: white;
+			border-right: 1px solid rgba(131, 131, 131, 200);
+			border-top: 1px solid rgba(131, 131, 131, 200);
+			border-bottom: 1px solid rgba(131, 131, 131, 200);
+			border-radius: 0 5px 5px 0;
+			cursor: pointer;
+		}
+
+		.cannot-select {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+		}
+
+		.cfalse {
+			background: linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
+			background: -webkit-linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
+			color: black;
+			text-shadow: rgb(224, 224, 224) 1px 0px 0px;
+			transition: all 0.2s linear;
+		}
+
+		.cfalse:active {
+			background: linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
+			background: -webkit-linear-gradient(top, rgba(192, 192, 192, 255), rgba(237, 237, 237, 255));
+			box-shadow: inset 0px 1px 4px 0 rgba(96, 96, 96, 64);
+			color: black;
+			text-shadow: rgb(224, 224, 224) 1px 0px 0px;
+			transition: all 0.2s linear;
+		}
+
+		.cfalse:after {
+			content: 'false';
+		}
+
+		.text_false {
+			
+		}
+
+		.text_false:after {
+			content: 'false';
+		}
+
+		.text_true {
+			
+		}
+
+		.text_true:after {
+			content: 'true';
+		}
+
+		.ctrue {
+			background: linear-gradient(top, rgba(100, 100, 100, 255), rgba(155, 155, 155, 255));
+			background: -webkit-linear-gradient(top, rgba(100, 100, 100, 255), rgba(155, 155, 155, 255));
+			box-shadow: inset 0px 2px 4px 0 rgba(32, 32, 32, 128);
+			color: white;
+			text-shadow: rgb(64, 64, 64) 1px 1px 0px;
+			transition: all 0.2s linear;
+		}
+
+		.ctrue:active {
+			background: linear-gradient(top, rgba(100, 100, 100, 255), rgba(128, 128, 128, 255));
+			background: -webkit-linear-gradient(top, rgba(100, 100, 100, 255), rgba(128, 128, 128, 255));
+			box-shadow: inset 0px 4px 4px 0 rgba(32, 32, 32, 128);
+			color: white;
+			text-shadow: rgb(64, 64, 64) 1px 1px 0px;
+			transition: background 0.2s linear;
+		}
+
+		.ctrue:after {
+			content: 'true';
+		}
+
+		.label-item {
+			width: 9.6em;
+		}
+
+		.switch-button-matcher {
+			display: inline-block;
+			/*background-color: grey;*/
+			background: linear-gradient(top, rgba(255, 255, 255, 255), rgba(241, 241, 241, 255)); 
+			background: -webkit-linear-gradient(top, rgba(255, 255, 255, 255), rgba(241, 241, 241, 255)); 
+			height: 30px;
+			width: 54px;
+			color: black;
+			border-radius: 5px 0 0 5px;
+			border-left: 1px solid rgba(144, 144, 144, 200);
+			border-top: 1px solid rgba(144, 144, 144, 200);
+			border-bottom: 1px solid rgba(144, 144, 144, 200);
+			box-shadow:inset -2px 0px 1px rgba(46, 46, 46, 0.5);
+		}
+
+		.vhr {
+			height: 160px;
+			background-color: grey;
+			width: 1px;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			margin-left: 0.2em;
+			margin-right: 0.3em;
+			box-shadow: 1px 0px 0px 0px #FFFFFF;
+		}
+	</style>
+
+</head>
+
+<body style="height: 100%; margin: 0; padding: 0;">
+
+<div class="container" style="width: 100%; padding: 10% 0 10% ; margin-left: auto; margin-right: auto; text-align: center;">
+
+	<div class="container-content">
+		<div class="row dialog dialog-background dialog-shadow-bottom-heavy" style="padding-left: 36px; padding-right: 36px;">
+			<div class="col" style="padding: 16% 0 8% 0">
+				<div class="form">
+					<div class="form-element"><div class="switch-button-matcher">p: </div><a class="switch-button cannot-select cfalse" prop="false" id="button-p" unselectable="on"></a></div>
+					<div class="form-element"><div class="switch-button-matcher">q: </div><a class="switch-button cannot-select ctrue" prop="true" id="button-q" unselectable="on"></a></div>
+					<div class="form-element">
+						<!-- <input style="text-align: center; margin: auto" type="button" value="CALC"> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="vhr"></div>
+			</div>
+
+			<div class="col">
+				<p class="label-item">Conjunction: <span id="label-conj" class="text_false"></span></p>
+				<p>Disjunction: <span id="label-disj" class="text_true"></span></p>
+				<p>Condition: <span id="label-cond" class="text_true"></span></p>
+				<p>Biocondition: <span id="label-bioc" class="text_false"></span></p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div style="position: absolute; bottom: 0%; width: 100%;">
+
+	<div class="container dialog-background dialog-shadow-top-light status-border-top" style="height: 4em;">
+		<div class="container-content" style="font-size: 0.5em; float: right; margin: 0.5em; ">
+			<div>软件学院 2013 级</div>
+			<div>王天晴 2013141463068</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+
+</html>
