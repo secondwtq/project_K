@@ -7,6 +7,7 @@
 	<title>Fundamental Navbar</title>
 
 	<link rel="stylesheet" type="text/css" href="fnavbar.css">
+	<script src="fnavbar.js"></script>
 
 </head>
 
@@ -17,7 +18,7 @@
 <ul class="fnavbar-items">
 	<li class="fnavbar-focus">基础页面</li>
 	<li>基础商城</li>
-	<li>巨基础</li>
+	<li>聚划算</li>
 	<li>基础城</li>
 	<li>基础良品</li>
 </ul>
@@ -27,6 +28,22 @@
 <p>
 
 </p>
+
+<script type="text/javascript">
+var navbar = document.getElementsByClassName("fnavbar");
+
+for (var i = 0; i < navbar.length; i++) {
+	var navbaritems = navbar[i].getElementsByClassName("fnavbar-items");
+	for (var j = 0; j < navbaritems.length; j++) {
+		var buttons = navbaritems[j].getElementsByTagName("li");
+		for (var k = 0; k < buttons.length; k++) {
+			buttons[k].onclick = function () {
+				alert('x');
+			}
+		}
+	}
+}
+</script>
 
 </body>
 
