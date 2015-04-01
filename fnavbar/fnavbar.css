@@ -1,0 +1,50 @@
+
+.fnavbar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+.fnavbar-items {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.fnavbar-items li {
+	float: left;
+	text-align: center;
+	cursor: default;
+}
+
+.fnavbar.tb-style {
+	padding: 0.5em 0 0 0;
+	border-bottom: 2px solid #EE8A2A;
+}
+
+.fnavbar.tb-style li {
+	padding: 0.15em 0.7em 0.15em 0.7em;
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+	color: #EE8A2A;
+	font-weight: bold;
+}
+
+.fnavbar.tb-style li.fnavbar-focus {
+	color: white;
+	background-color: #EE8A2A;
+	border-radius: 3px 3px 0 0;
+}
+
+.fnavbar.tb-style li.fnavbar-focus:hover {
+	background: #d57b26;
+	box-shadow: 0 2px 0 #d57b26;
+}
+
+.fnavbar.tb-style li:hover {
+	background: -webkit-linear-gradient(top, #FFFBED, #FFF5DE);
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0 0 3px #e8cfb4;
+}

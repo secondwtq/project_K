@@ -8,6 +8,8 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 
 	<script>
@@ -53,8 +55,9 @@
 	<style type="text/css">
 		html, body {
 			height: 100%;
-			background: -webkit-linear-gradient(top, rgba(225, 225, 225, 1), rgba(172, 172, 172, 1)); 
-			background: linear-gradient(top, rgba(225, 225, 225, 1), rgba(172, 172, 172, 1)); 
+			background: -webkit-linear-gradient(rgba(225, 225, 225, 1), rgba(172, 172, 172, 1)); 
+			background-image: linear-gradient(rgba(225, 225, 225, 1), rgba(172, 172, 172, 1));
+			font-family: Helvetica, STHeiti, sans-serif;
 		}
 
 		.row {
@@ -64,7 +67,7 @@
 		}
 
 		.dialog-background {
-			background: linear-gradient(top, rgba(247, 246, 246, 255), rgba(227, 227, 227, 255));
+			background-image: linear-gradient(rgba(247, 246, 246, 255), rgba(227, 227, 227, 255));
 			background: -webkit-linear-gradient(top, rgba(247, 246, 246, 255), rgba(227, 227, 227, 255));
 		}
 
@@ -114,6 +117,7 @@
 			border-bottom: 1px solid rgba(131, 131, 131, 200);
 			border-radius: 0 5px 5px 0;
 			cursor: pointer;
+			line-height: 150%;
 		}
 
 		.cannot-select {
@@ -122,7 +126,7 @@
 		}
 
 		.cfalse {
-			background: linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
+			background-image: linear-gradient(rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
 			background: -webkit-linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
 			color: black;
 			text-shadow: rgb(224, 224, 224) 1px 0px 0px;
@@ -130,7 +134,7 @@
 		}
 
 		.cfalse:active {
-			background: linear-gradient(top, rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
+			background-image: linear-gradient(rgba(250, 250, 250, 255), rgba(237, 237, 237, 255));
 			background: -webkit-linear-gradient(top, rgba(192, 192, 192, 255), rgba(237, 237, 237, 255));
 			box-shadow: inset 0px 1px 4px 0 rgba(96, 96, 96, 64);
 			color: black;
@@ -159,7 +163,7 @@
 		}
 
 		.ctrue {
-			background: linear-gradient(top, rgba(100, 100, 100, 255), rgba(155, 155, 155, 255));
+			background-image: linear-gradient(rgba(100, 100, 100, 255), rgba(155, 155, 155, 255));
 			background: -webkit-linear-gradient(top, rgba(100, 100, 100, 255), rgba(155, 155, 155, 255));
 			box-shadow: inset 0px 2px 4px 0 rgba(32, 32, 32, 128);
 			color: white;
@@ -168,7 +172,7 @@
 		}
 
 		.ctrue:active {
-			background: linear-gradient(top, rgba(100, 100, 100, 255), rgba(128, 128, 128, 255));
+			background-image: linear-gradient(rgba(100, 100, 100, 255), rgba(128, 128, 128, 255));
 			background: -webkit-linear-gradient(top, rgba(100, 100, 100, 255), rgba(128, 128, 128, 255));
 			box-shadow: inset 0px 4px 4px 0 rgba(32, 32, 32, 128);
 			color: white;
@@ -187,7 +191,7 @@
 		.switch-button-matcher {
 			display: inline-block;
 			/*background-color: grey;*/
-			background: linear-gradient(top, rgba(255, 255, 255, 255), rgba(241, 241, 241, 255)); 
+			background-image: linear-gradient(rgba(255, 255, 255, 255), rgba(241, 241, 241, 255)); 
 			background: -webkit-linear-gradient(top, rgba(255, 255, 255, 255), rgba(241, 241, 241, 255)); 
 			height: 30px;
 			width: 54px;
@@ -197,6 +201,7 @@
 			border-top: 1px solid rgba(144, 144, 144, 200);
 			border-bottom: 1px solid rgba(144, 144, 144, 200);
 			box-shadow:inset -2px 0px 1px rgba(46, 46, 46, 0.5);
+			line-height: 150%;
 		}
 
 		.vhr {
@@ -209,13 +214,19 @@
 			margin-right: 0.3em;
 			box-shadow: 1px 0px 0px 0px #FFFFFF;
 		}
+
+		.footer-fixed {
+			position: fixed;
+			bottom: 0%;
+			width: 100%;
+		}
 	</style>
 
 </head>
 
 <body style="height: 100%; margin: 0; padding: 0;">
 
-<div class="container" style="width: 100%; padding: 10% 0 10% ; margin-left: auto; margin-right: auto; text-align: center;">
+<div class="container" style="width: 100%; padding: 10% 0 10%; margin-left: auto; margin-right: auto; text-align: center;">
 
 	<div class="container-content">
 		<div class="row dialog dialog-background dialog-shadow-bottom-heavy" style="padding-left: 36px; padding-right: 36px;">
@@ -244,12 +255,17 @@
 
 </div>
 
-<div style="position: absolute; bottom: 0%; width: 100%;">
+<div class="footer-fixed">
 
 	<div class="container dialog-background dialog-shadow-top-light status-border-top" style="height: 4em;">
-		<div class="container-content" style="font-size: 0.5em; float: right; margin: 0.5em; ">
-			<div>软件学院 2013 级</div>
-			<div>王天晴 2013141463068</div>
+		<div class="container-content">
+			<div style="position: absolute; bottom: 0; left: 0; font-size: x-small; margin-left: 0.5em; margin-bottom: 0.5em; line-height: 150%; color: dimgray;">
+				<div>Tested on Chrome 38, Safari 7.1, Firefox 32 and IE 11.</div>
+			</div>
+			<div style="position: absolute; bottom: 0; right: 0; font-size: small; margin-right: 0.5em; margin-bottom: 0.5em; line-height: 150%;">
+				<div>软件学院 2013 级</div>
+				<div>王天晴 <i>2013141463068</i></div>
+			</div>
 		</div>
 	</div>
 
