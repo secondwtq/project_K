@@ -32,17 +32,41 @@
 <script type="text/javascript">
 var navbar = document.getElementsByClassName("fnavbar");
 
-for (var i = 0; i < navbar.length; i++) {
-	var navbaritems = navbar[i].getElementsByClassName("fnavbar-items");
-	for (var j = 0; j < navbaritems.length; j++) {
-		var buttons = navbaritems[j].getElementsByTagName("li");
-		for (var k = 0; k < buttons.length; k++) {
-			buttons[k].onclick = function () {
-				alert('x');
-			}
-		}
-	}
+function foreach_class (parent, classname, func) {
+	var a = parent.getElementsByClassName(classname);
+	for (var i = 0; i < a.length; i++) {
+		func(a[i]); }
 }
+
+function foreach_tag (parent, tagname, func) {
+	var a = parent.getElementsByTagName(tagname);
+	for (var i = 0; i < a.length; i++) {
+		func(a[i]);}
+}
+
+function add_class (ele, classname) {
+	ele.classList.add(classname); /* IE10 */ }
+
+function remove_class (ele, classname) {
+	ele.classList.remove(classname); /* IE10 */ }
+
+foreach_class(document, "fnavbar", function (ele) {
+	foreach_class(ele, "fnavbar-items", function (ele) {
+		foreach_tag(ele, "li", function (ele) {
+			ele.onclick = function () {
+				foreach_class(document, "fnavbar", function (ele) {
+					foreach_class(ele, "fnavbar-items", function (ele) {
+						foreach_tag(ele, "li", function (ele) {
+							remove_class(ele, "fnavbar-focus");
+						});
+					});
+				});
+				add_class(ele, "fnavbar-focus");
+			};
+		});
+	});
+});
+
 </script>
 
 </body>
