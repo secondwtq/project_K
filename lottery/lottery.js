@@ -1,3 +1,5 @@
+/* global Fallback */
+/* global Lottery */
 
 Lottery = { };
 
@@ -152,10 +154,16 @@ Lottery.save_as_txt = function (src, filename) {
 		r.WriteLine(src);
 		r.Close();
 	} else {
-		aLink = document.getElementById("download");
+		var aLink = document.getElementById("download");
 		aLink.download = filename;
 		aLink.href = "data:text/plain," + src;
 	}
 };
+
+Lottery.add_keyevent = function (event) {
+	if (event.keyCode == 13) {
+		document.getElementById('btn-add').click();
+	}	
+}
 
 Lottery.on_load();

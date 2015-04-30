@@ -29,10 +29,11 @@
 		<div style="display: table; margin: 0 auto;">
 			<div style="display: table-cell;">
 				<div class="form-cell">
-					<input type="text" id="input-name" >
+					<!-- http://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box -->
+					<input type="text" id="input-name" onkeypress="Lottery.add_keyevent(event);" >
 				</div>
 				<div class="form-cell">
-					<input type="button" class="l-button" onclick="Lottery.add_to_list();" value="Add" />
+					<input type="button" class="l-button" id="btn-add" onclick="Lottery.add_to_list();" value="Add" />
 				    <input type="button" class="l-button" onclick="Lottery.clear_list();" value="Clear" />
 				</div>
 			</div>
