@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Draw A Lot!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="lottery.css">
+
+</head>
+
+<body>
+
+	<div class="l-container">
+
+	    <h2 id="l-header">
+	        Draw Lot
+	    </h2>
+
+<!-- 	    <form onsubmit="event.preventDefault(); Lottery.add_to_list();">
+		    <input type="text" id="input-name" >
+		    <br />
+		    <input type="submit" class="submit" value="Add" />
+		    <input type="button" onclick="Lottery.clear_list();" value="Clear" />
+		</form> -->
+
+		<input type="text" id="input-name" >
+		<input type="button" class="l-button" onclick="Lottery.add_to_list();" value="Add" />
+	    <input type="button" class="l-button" onclick="Lottery.clear_list();" value="Clear" />
+
+		<div class="l-container-inner">
+		    <div id="no-object">Nothing to draw!</div>
+		    <ul id="objects">
+
+		    </ul>
+		</div>
+
+	    <!-- <div>aaa<span onclick="">X</span></div> -->
+
+	    <input type="button" class="l-button" onclick="Lottery.$current = Lottery.shuffle(Lottery.$current); Lottery.refresh_with(Lottery.$current);" value="Shuffle" />
+	    <input type="button" class="l-button" onclick="" value="Save As Text" />
+
+	</div>
+
+    <script type="text/javascript" src="lottery.js"></script>
+
+</body>
+
+</html>
