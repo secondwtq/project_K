@@ -93,3 +93,8 @@ body {
 	border: solid 1px #5E9ED7;
 	box-shadow: inset 1px 2px 5px #bbbbbb, 0 0 2px #5E9ED7;
 }
+
+.form-cell {
+	display: inline-block;
+	vertical-align: middle;
+}

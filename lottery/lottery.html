@@ -25,9 +25,18 @@
 		    <input type="button" onclick="Lottery.clear_list();" value="Clear" />
 		</form> -->
 
-		<input type="text" id="input-name" >
-		<input type="button" class="l-button" onclick="Lottery.add_to_list();" value="Add" />
-	    <input type="button" class="l-button" onclick="Lottery.clear_list();" value="Clear" />
+		<!-- center layout, a little tricky -->
+		<div style="display: table; margin: 0 auto;">
+			<div style="display: table-cell;">
+				<div class="form-cell">
+					<input type="text" id="input-name" >
+				</div>
+				<div class="form-cell">
+					<input type="button" class="l-button" onclick="Lottery.add_to_list();" value="Add" />
+				    <input type="button" class="l-button" onclick="Lottery.clear_list();" value="Clear" />
+				</div>
+			</div>
+		</div>
 
 		<div class="l-container-inner">
 		    <div id="no-object">Nothing to draw!</div>
