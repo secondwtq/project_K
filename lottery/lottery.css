@@ -1,10 +1,72 @@
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('font-awesome/fonts/fontawesome-webfont.eot');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('font-awesome/fonts/fontawesome-webfont.eot') format('embedded-opentype'), url('font-awesome/fonts/fontawesome-webfont.woff2') format('woff2'), url('font-awesome/fonts/fontawesome-webfont.woff') format('woff'), url('font-awesome/fonts/fontawesome-webfont.ttf') format('truetype'), url('font-awesome/fonts/fontawesome-webfont.svg') format('svg');
+}
+
 body {
-	background-color: #FAFAFA;
+	background-color: #F4F4F4;
 }
 
 #l-header {
 	margin: 0;
+	font-weight: normal;
+	padding-bottom: 0.15em;
+	margin-bottom: 0.5em;
+	color: darkslategray;
+	/*border-bottom: 1px dashed rgb(181, 181, 181);*/
+}
+
+#l-footer {
+	width: 100%;
+	text-align: center;
+	margin-top: 5%;
+	position: relative;
+	bottom: 10%;
+}
+
+#l-footer-container {
+	border-top: 1px solid #E8E8E8;
+	box-shadow: inset #F8F8F8 0 1px 0;
+	padding: 1.5em;
+}
+
+.l-footer-text {
+	text-shadow: 1px 1px 0 #fff;
+	color: #adadad;
+	font-size: 12px;
+	padding: 0.2em;
+}
+
+.l-footer-text a {
+	color: #68b5c9;
+	transition: color 0.1s ease-in-out;
+	text-decoration: none;
+	border-bottom: 1px dashed #68cce6;
+}
+
+.l-footer-text a:hover {
+	color: #68cce6;
+}
+
+.l-footer-text a:active {
+	color: #479db3;
+	border-bottom: 1px dashed #abdeeb;
+}
+
+.l-footer-text .l-footer-icon-link {
+	border-bottom: none !important;
+	font-size: 18px;
+
+	color: #C4C4C4;
+	color: rgba(196, 196, 196, 0.7);
+	cursor: pointer;
+	text-shadow: 0 1px 0 #F4F4F4, 0 0 0 gray;
 }
 
 .l-hidden {
@@ -13,23 +75,24 @@ body {
 
 .l-container {
 	margin: 0 auto;
-	margin-top: 4em;
+	margin-top: 7%;
 	max-width: 320px;
 	text-align: center;
-	padding: 1em;
+	padding: 0.7em;
 
 	border-radius: 4px;
-	box-shadow: #6A6A6A 4px 4px 8px;
+	box-shadow: #999999 4px 4px 16px, inset #F3F3F3 1px 1px 1px;
 	background-color: #E7E7E7;
-	border: 1px solid rgb(212, 212, 212);
+	border: 1px solid rgb(196, 196, 196);
 }
 
 .l-container-inner {
 	border-radius: 4px;
-	border: 1px solid rgb(212, 212, 212);
+	border: 1px solid rgb(236, 236, 236);
+	padding: 0.2em;
 	margin: 1em;
-	box-shadow: inset #7C7C7C 2px 2px 4px;
-	background-color: #BCBCBC;
+	box-shadow: inset #888888 2px 2px 6px;
+	background-color: #CCCCCC;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -60,7 +123,20 @@ body {
 }
 
 #no-object {
-	padding: 1em;
+	padding: 1.5em;
+	color: #555555;
+	text-shadow: 0 1px 0px #ccc;
+}
+
+.object-id {
+	float: left;
+	padding: 3px;
+	padding-left: 0.7em;
+	/*padding-right: 0.7em;*/
+	font-size: 12px;
+	text-shadow: none;
+	color: gray;
+	/*border-right: 1px solid #CCCCCC;*/
 }
 
 .object-item {
@@ -68,12 +144,19 @@ body {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	margin: 0.6em;
-	border: 1px solid rgb(212, 212, 212);
+	border: 1px solid rgb(166, 166, 166);
 	list-style: none;
 	position: relative;
-	background-color: #DBDBDB;
+	background-color: #DDDDDD;
 	border-radius: 2px;
-	box-shadow: #7C7C7C 1px 1px 4px;
+	box-shadow: #888888 1px 1px 4px;
+	color: darkslategray;
+	text-shadow: white 0 1px;
+}
+
+.del-button {
+	float: right;
+	font-size: 16px !important;
 }
 
 #input-name {
@@ -81,12 +164,15 @@ body {
 	border-radius: 20px;
 	border: solid 1px #cccccc;
 	background-color: #fafafa;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 14px;
+	line-height: 28px;
+	min-width: 18em;
 	padding-left: 1em;
 	outline-style: none;
 	outline-width: 0px;
 	transition: all 0.2s ease-in-out;
+	color: #777777;
+	text-shadow: 0 1px 0 #DDDDDD;
 }
 
 #input-name:focus {
@@ -97,4 +183,53 @@ body {
 .form-cell {
 	display: inline-block;
 	vertical-align: middle;
+	position: relative;
+}
+
+.l-fa-icon {
+	font-family: FontAwesome;
+}
+
+.l-fa-ibutton {
+	/* stackoverflow.com/questions/15424915/css-child-padding-makes-it-draw-out-side-the-parent */
+	display: inline-block;
+	font-size: 22px;
+	padding: 0.2em;
+	color: gray;
+	color: rgba(172, 172, 172, 0.7);
+	cursor: pointer;
+	text-shadow: 1px 1px 1px #E7E7E7, 0 0 0 gray;
+	transition: all 0.07s ease-in-out;
+}
+
+.l-fa-ibutton:hover {
+	color: #6A6A6A;
+	color: rgba(144, 144, 144, 0.7);
+}
+
+.l-fa-ibutton:active {
+	color: darkslategray;
+	color: rgba(128, 128, 128, 0.9);
+}
+
+#btn-add {
+	position: absolute;
+	font-size: 16px;
+	right: 0.5em;
+	bottom: 4px;
+	color: #CCCCCC;
+}
+
+#btn-add:hover {
+	font-size: 16px;
+	right: 0.5em;
+	bottom: 4px;
+	color: #BBBBBB;
+}
+
+#btn-add:active {
+	font-size: 18px;
+	right: 0.4em;
+	bottom: 2px;
+	color: #a1a1a1;
 }

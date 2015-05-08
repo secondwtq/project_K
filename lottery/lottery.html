@@ -23,11 +23,8 @@
 			<div style="display: table-cell;">
 				<div class="form-cell">
 					<!-- http://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box -->
-					<input type="text" id="input-name" onkeypress="Lottery.add_keyevent(event);" >
-				</div>
-				<div class="form-cell">
-					<input type="button" class="l-button" id="btn-add" onclick="Lottery.add_to_list();" value="Add" />
-				    <input type="button" class="l-button" onclick="Lottery.clear_list();" value="Clear" />
+					<input type="text" id="input-name" onkeypress="Lottery.add_keyevent(event);" placeholder="Add something ..." >
+					<a class="l-fa-icon l-fa-ibutton" id="btn-add" onclick="Lottery.add_to_list();" >&#xf067;</a>
 				</div>
 			</div>
 		</div>
@@ -41,9 +38,31 @@
 
 	    <!-- <div>aaa<span onclick="">X</span></div> -->
 
-	    <input type="button" class="l-button" onclick="Lottery.$current = Lottery.shuffle(Lottery.$current); Lottery.refresh_with(Lottery.$current);" value="Shuffle" />
-	    <input type="button" class="l-button" onclick="" value="Save As Text" />
+		<a class="l-fa-icon l-fa-ibutton" onclick="Lottery.clear_list();">&#xf10c;</a>
 
+		<a class="l-fa-icon l-fa-ibutton" onclick="Lottery.$current = Lottery.shuffle(Lottery.$current); Lottery.refresh_with(Lottery.$current);">
+			&#xf074;
+		</a>
+		<a class="l-fa-icon l-fa-ibutton" onclick="Lottery.save_onclick()">
+			&#xf0c8;
+		</a>
+
+		<a id="download-placeholder" style="display: none;">Download</a>
+
+	</div>
+
+	<div id="l-footer">
+		<div id="l-footer-container">
+			<div class="l-footer-text">
+				Made by Caster, seanchain and secondwtq with &#x2665;
+			</div>
+			<div class="l-footer-text">
+				<a href="https://scuisdc.com">SCU ISDC</a> 2015
+			</div>
+			<div class="l-footer-text" style="padding: 0.5em;">
+				<a class="l-fa-icon l-footer-icon-link" href="https://github.com/scuisdc">&#xf09b;</a>
+			</div>
+		</div>
 	</div>
 
     <script type="text/javascript" src="lottery.js"></script>
